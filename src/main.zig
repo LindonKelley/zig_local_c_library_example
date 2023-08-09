@@ -8,3 +8,10 @@ pub fn main() anyerror!void {
     print("{}\n", .{a});
 }
 
+test "test example" {
+    for (0..5) |a| {
+        for (5..10) |b| {
+            try std.testing.expect(example.add(@intCast(a), @intCast(b)) == a + b);
+        }
+    }
+}
